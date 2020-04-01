@@ -2,7 +2,9 @@
 Stata dta in Python
 ###################
 
-Thanks for https://github.com/jrfiedler/stata-dta-in-python.git . This repo version entends for dta formats 118 while origin repo was inplemented for dta formats 117, 115, and 114)
+Please Turn to See https://github.com/jrfiedler/stata-dta-in-python.git . As this repository is just personalized extended for cutting a large dta(formats 118) file into small files.
+
+This repo version entends for dta formats 118 while origin repo was inplemented for dta formats 117, 115, and 114)
 
 This is a package for using Stata .dta files in Python. The main functionality of the package is in its ``Dta`` class and subclasses, which encapsulate the information from a .dta file, and provide methods for adding, replacing, or deleting this information.
 
@@ -10,13 +12,13 @@ You can create ``Dta`` objects from .dta files or from iterables of Python value
 
 This package has been tested on Python 3.1, 3.2, and 3.3. Some parts of this package do not work in Python 2. Support for Python 2 might be added at a later date.
 
-Currently, this package supports .dta file formats 114, 115, and 117.
+Currently, this package supports .dta file formats 118, 117, 115, and 114.
 
 
 Requirements
 ============
 
-Python 3.1 - 3.4
+Python 3.1 - 3.6
 
 
 Installation
@@ -39,7 +41,8 @@ Changelog
 
 0.3.0
 -----
-- Added dta formats 118
+- personalized extended for reading dta(formats 118) file without data, and then reading data and cut into small files.
+- see `stata_data_exec.ipynb` with `jupter notebook` for more using details.
 
 0.2.0
 -----
@@ -52,8 +55,36 @@ Changelog
 See examples "Quick access to data variables" and "Math with missing values" in EXAMPLES.rst.
 
 
-Example usage
-=============
+Example usage v0.3.0
+====================
+
+::
+
+    >>> dta = open_dta(file_path)
+
+    >>> vars_to_get = ['year', 'panel_id', 'id_in_source', 'id', 'name', 'legal_person', 'region','agriculture', 'industry', 'construction_industry', 'transportation_industry',  'catering', 'other', 'business_scale', 'light_and_heavy_industry',  'gross_output_constant', 'gross_output_current',  'net_total_fixed_assets', 'total_fixed_assets',  'accumulated_depreciation', 'depreciation_this_year',  'paid_in_capital', 'national_capital', 'collective_capital', 'corporate_capital', 'personal_capital', 'hkmt_capital', 'foreign_capital', 'main_business_revenue', 'main_business_cost',  'operating_profit','payable_profit', 'payroll_payable', 'welfare_payable',  'light_heavy_industry']
+
+    >>> data = dta.get_year_data_as_list(file_path, 2009, 2015, vars_to_get)
+
+    >>> print(len(dta._varvals))
+    2950504
+
+    >>> print(len(dta._typlist_to_save))
+    35
+
+    >>> print(dta._nvar_to_save, dta._nobs_to_save)
+    35 2950504
+
+    >>> dta._dta_obj_to_file(save_file_path)
+    Saving to `$save_file_path`
+    Save Success!
+
+    >>> dta_saved = open_dta(save_file_path)
+
+see `stata_data_exec.ipynb` with `jupter notebook`
+
+Example usage v0.2.0
+====================
 
 ::
 

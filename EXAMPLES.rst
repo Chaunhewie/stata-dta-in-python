@@ -16,12 +16,13 @@ Contents
 Basic information
 =================
 
-Three versions of .dta files are supported: 114, 115, and 117 (see -help dta- <http://www.stata.com/help.cgi?dta> for a technical description of .dta formats).
+Four versions of .dta files are supported: 114, 115, 117 and 118 (see -help dta- <http://www.stata.com/help.cgi?dta> for a technical description of .dta formats).
 
 The ``stata_dta`` package contains
 
 - The Dta115 class, for .dta versions 114 and 115
 - The Dta117 class, for .dta version 117
+- The Dta118 class, for .dta version 118
 - ``open_dta()`` for opening .dta files, especially when the user does not know the file's version
 - ``display_diff()`` for displaying detailed information about differences between two ``Dta`` objects
 
