@@ -4,3 +4,5 @@ stata_dta/tests/
 incomplete/
 build/
 *.pyc
+.idea
+

@@ -2,7 +2,9 @@
 Stata dta in Python
 ###################
 
-This is a package for using Stata .dta files in Python. The main functionality of the package is in its ``Dta`` class and subclasses, which encapsulate the information from a .dta file, and provide methods for adding, replacing, or deleting this information. 
+Thanks for https://github.com/jrfiedler/stata-dta-in-python.git . This repo version entends for dta formats 118 while origin repo was inplemented for dta formats 117, 115, and 114)
+
+This is a package for using Stata .dta files in Python. The main functionality of the package is in its ``Dta`` class and subclasses, which encapsulate the information from a .dta file, and provide methods for adding, replacing, or deleting this information.
 
 You can create ``Dta`` objects from .dta files or from iterables of Python values. You can manipulate ``Dta`` objects in basic ways (add observations, replace data values, rename data variables etc.), and you can save ``Dta`` objects to .dta files. 
 
@@ -22,7 +24,7 @@ Installation
 
 Download the package, either with::
 
-    git clone https://github.com/jrfiedler/stata-dta-in-python
+    git clone https://github.com/Chaunhewie/stata-dta-in-python.git
 
 or by downloading a zip archive (there's a button on the right side of this page) and unzipping. 
 
@@ -34,6 +36,10 @@ to install.
 
 Changelog
 =========
+
+0.3.0
+-----
+- Added dta formats 118
 
 0.2.0
 -----
@@ -147,15 +153,16 @@ For more examples, see EXAMPLES.md.
 
 Contributors
 ============
+- Chaunhewie Tian
 - James Fiedler
 - Matthew Koslovsky
 
 
 Contact
 =======
-James Fiedler, jrfiedler@gmail.com
+- ChaunhewieTian, chaunhewietian@163.com
 
 
 License
 =======
-Copyright (c) 2014, James Fiedler (MIT License)
+Copyright (c) 2020, Chaunhewie Tian (MIT License)
